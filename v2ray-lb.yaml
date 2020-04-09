@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: xraylb
+  labels:
+    app: xray-lb
+spec:
+  ports: 
+    - port: 11443
+  selector:
+    app: xray #match the labels of app
+    tier: frontend
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xray
+  labels: 
+    app: 3xray
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: 3xray
+  template:
+    metadata:
+      labels:
+        app: 3xray
+    spec:
+      containers:
+        - image: kelvinxue1107/v2ray:0.1
+          name: xray
+          ports:
+            - containerPort: 11443
+---

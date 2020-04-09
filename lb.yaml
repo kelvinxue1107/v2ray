@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: xraylb
+  labels:
+    app: xray
+spec:
+  ports: 
+  - port: 11443
+  selector:
+    app: xray
+    tier: frontend
+  type: LoadBalancer

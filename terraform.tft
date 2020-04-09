@@ -1,0 +1,7 @@
+#terraform {
+#  backend "gcs" {
+#    credentials = "../keys/GCPRoles/k8s-admin.json"
+#    bucket      = "backup-tf"
+#    prefix      = "terraform/state"
+#  }
+#}
