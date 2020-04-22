@@ -9,6 +9,7 @@ RUN chmod +x /tmp/go.sh
 RUN /tmp/go.sh
 #install acme.sh for ssl connections.
 RUN curl https://get.acme.sh | sh
+EXPOSE 80
 RUN ~/.acme.sh/acme.sh --issue -d geforce.io --standalone -k ec-256
 
 FROM alpine:latest
