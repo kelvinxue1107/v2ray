@@ -1,0 +1,90 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "koreacentral"
+            }
+        },
+        "containerName": {
+            "value": {
+                "type": "String",
+                "value": "vx01"
+            }
+        },
+        "imageType": {
+            "value": {
+                "type": "String",
+                "value": "Public"
+            }
+        },
+        "imageName": {
+            "value": {
+                "type": "String",
+                "value": "kelvinxue1107/v2ray:0.1"
+            }
+        },
+        "osType": {
+            "value": {
+                "type": "String",
+                "value": "Linux"
+            }
+        },
+        "numberCpuCores": {
+            "value": {
+                "type": "String",
+                "value": "1"
+            }
+        },
+        "memory": {
+            "value": {
+                "type": "String",
+                "value": "1"
+            }
+        },
+        "restartPolicy": {
+            "value": {
+                "type": "String",
+                "value": "OnFailure"
+            }
+        },
+        "commandOverrideArray": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    "v2ray",
+                    "-config=/etc/v2ray/config.json"
+                ]
+            }
+        },
+        "ipAddressType": {
+            "value": {
+                "type": "String",
+                "value": "Public"
+            }
+        },
+        "ports": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    {
+                        "port": "443",
+                        "protocol": "TCP"
+                    },
+                    {
+                        "port": "11443",
+                        "protocol": "TCP"
+                    }
+                ]
+            }
+        },
+        "dnsNameLabel": {
+            "value": {
+                "type": "String",
+                "value": "vx-01"
+            }
+        }
+    }
+}
